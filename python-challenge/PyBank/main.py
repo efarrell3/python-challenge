@@ -12,11 +12,11 @@ with open(bank_csv, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csvheader = next(csvreader, None)
     #Find the number of months.  Subtracting the first row because it's the header
-    months = len(list(csvreader))
+    months = len(list(csvreader))-1
 
     #Sum all of the data in the second column
-    money = int(csvreader[1])
-    total = sum(money)
+   # money = int(csvreader[1])
+    #total = sum(money)
 
     #Find the greatest increase in profits
     #dateinc will be the date that the greatest increase in profits occurs
@@ -41,13 +41,13 @@ with open(outPath, 'w') as datafile:
     csvwriter.writerow(["Total Months:", months])
 
     # write the third row printing the sum of profits and losses in the second column
-    csvwriter.writerow(["Total:", total])
+   #3 csvwriter.writerow(["Total:", total])
 
     #write the fourth row
-    csvwriter.writerow(["Greatest Increase in Profits:", dateinc, amountinc])
+    #csvwriter.writerow(["Greatest Increase in Profits:", dateinc, amountinc])
 
      #write the fifth row
-    csvwriter.writerow(["Greatest Decrease in Profits:", datedec, amountdec])
+   # csvwriter.writerow(["Greatest Decrease in Profits:", datedec, amountdec])
 
 
 
